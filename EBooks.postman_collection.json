@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "9db6cc8a-f993-46bb-94cd-f2825d8f29db",
+		"name": "EBooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33674773"
+	},
+	"item": [
+		{
+			"name": "Crear ebook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\":\"Among us\",\r\n    \"Author\":\"Susan\",\r\n    \"Genre\":\"Misterio\",\r\n    \"Format\":\"Ebook\",\r\n    \"Price\":10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/ebook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllEbook(solo prueba)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ebook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Ebook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\":\"Among us\",\r\n    \"Author\":\"Susanoo\",\r\n    \"Genre\":\"Misterio\",\r\n    \"Format\":\"Ebook\",\r\n    \"Price\":10000,\r\n    \"IsAvailable\": false,\r\n    \"Stock\": 200000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/ebook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incrementar Stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Stock\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/ebook/1/increment-stock",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook",
+						"1",
+						"increment-stock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambiar disponibilidad",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ebook/1/change-availability",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook",
+						"1",
+						"change-availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Comprar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 1,\r\n    \"Quantity\": 2,\r\n    \"Amount\": 20000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/ebook/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ebook/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ebook?genre=Misterio&format=Ebook&author=Susan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ebook"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Misterio"
+						},
+						{
+							"key": "format",
+							"value": "Ebook"
+						},
+						{
+							"key": "author",
+							"value": "Susan"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
